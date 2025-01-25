@@ -78,4 +78,3 @@ export const OutfitManager = (props, context) => {
     </Window>
   );
 };
-

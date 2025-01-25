@@ -172,7 +172,7 @@ GLOBAL_LIST_EMPTY(apostles)
 				if(ishuman(L))
 					var/mob/living/carbon/human/H = L
 					new /obj/effect/temp_visual/dir_setting/cult/phase(T, H.dir)
-					addtimer(CALLBACK(src, .proc/revive_target, H, i))
+					addtimer(CALLBACK(src, PROC_REF(revive_target), H, i))
 				else if(!("apostle" in L.faction))
 					playsound(L.loc, 'sound/machines/clockcult/ark_damage.ogg', 50, TRUE, -1)
 					L.adjustFireLoss(holy_revival_damage)

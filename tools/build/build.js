@@ -176,21 +176,7 @@ const taskDm = (...injectedDefines) => new Task('dm')
       );
     })();
     if (injectedDefines.length) {
-        const injectedContent = injectedDefines
-          .map(x => `#define ${x}\n`)
-          .join('')
-        // Create mdme file
-        fs.writeFileSync(`${DME_NAME}.mdme`, injectedContent)
-        // Add the actual dme content
-        const dme_content = fs.readFileSync(`${DME_NAME}.dme`)
-        fs.appendFileSync(`${DME_NAME}.mdme`, dme_content)
-        await exec(dmPath, [`${DME_NAME}.mdme`]);
-        // Rename dmb
-        fs.renameSync(`${DME_NAME}.mdme.dmb`, `${DME_NAME}.dmb`)
-        // Rename rsc
-        fs.renameSync(`${DME_NAME}.mdme.rsc`, `${DME_NAME}.rsc`)
-        // Remove mdme
-        fs.unlinkSync(`${DME_NAME}.mdme`)
+        await exec(dmPath, [`${DME_NAME}.dme`]);
     }
     else {
       await exec(dmPath, [`${DME_NAME}.dme`]);

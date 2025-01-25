@@ -385,13 +385,13 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 
 				dat += "<br><span style='border: 1px solid #161616; background-color: #[facial_hair_color];'>&nbsp;&nbsp;&nbsp;</span> <a href='?_src_=prefs;preference=facial;task=input'>Change</a>"
 				dat += "<a href='?_src_=prefs;preference=toggle_random;random_type=[RANDOM_FACIAL_HAIR_COLOR]'>[(randomise[RANDOM_FACIAL_HAIR_COLOR]) ? "Lock" : "Unlock"]</A>"
-				
+
 				dat += "<h3>Hair Gradient</h3>"
 
 				dat += "<a style='display:block;width:100px' href='?_src_=prefs;preference=grad_style;task=input'>[grad_style]</a>"
 				dat += "<a href='?_src_=prefs;preference=previous_grad_style;task=input'>&lt;</a> <a href='?_src_=prefs;preference=next_grad_style;task=input'>&gt;</a><BR>"
 				dat += "<span style='border: 1px solid #161616; background-color: #[grad_color];'>&nbsp;&nbsp;&nbsp;</span> <a href='?_src_=prefs;preference=grad_color;task=input'>Change</a><BR>"
-				
+
 				dat += "<br></td>"
 
 			//Mutant stuff
@@ -931,7 +931,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 		//The job before the current job. I only use this to get the previous jobs color when I'm filling in blank rows.
 		var/datum/job/lastJob
 
-		for(var/datum/job/job in sortList(SSjob.occupations, /proc/cmp_job_display_asc))
+		for(var/datum/job/job in sortList(SSjob.occupations, GLOBAL_PROC_REF(cmp_job_display_asc)))
 
 			//This lists all the maptypes that are nonstandard, and will delete all jobs.
 

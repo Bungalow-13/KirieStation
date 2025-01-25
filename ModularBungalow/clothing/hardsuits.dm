@@ -76,7 +76,7 @@
 
 /obj/item/clothing/suit/space/hardsuit/mining/compact/Initialize()
 	. = ..()
-	UnregisterSignal(src, COMSIG_ARMOR_PLATED, .proc/upgrade_icon)
+	UnregisterSignal(src, COMSIG_ARMOR_PLATED, PROC_REF(upgrade_icon))
 
 /obj/item/clothing/head/helmet/space/hardsuit/mining/compact
 	name = "compact mining hardsuit helmet"
@@ -88,7 +88,7 @@
 
 /obj/item/clothing/head/helmet/space/hardsuit/mining/compact/Initialize()
 	. = ..()
-	UnregisterSignal(src, COMSIG_ARMOR_PLATED, .proc/upgrade_icon)
+	UnregisterSignal(src, COMSIG_ARMOR_PLATED, PROC_REF(upgrade_icon))
 
 //BNI hardsuit
 /obj/item/clothing/suit/space/hardsuit/ert/bni
