@@ -8,6 +8,7 @@ import { createLogger } from 'common/logging.js';
 import fs from 'fs';
 import os from 'os';
 import { basename } from 'path';
+import { promisify } from 'util';
 import { resolveGlob, resolvePath } from './util.js';
 import { regQuery } from './winreg.js';
 import { DreamSeeker } from './dreamseeker.js';
@@ -67,8 +68,6 @@ export const findCacheRoot = async () => {
 
 const onCacheRootFound = cacheRoot => {
   logger.log(`found cache at '${cacheRoot}'`);
-  // Plant a dummy
-  fs.closeSync(fs.openSync(cacheRoot + '/dummy', 'w'));
 };
 
 export const reloadByondCache = async bundleDir => {
@@ -93,17 +92,19 @@ export const reloadByondCache = async bundleDir => {
     // Clear garbage
     const garbage = await resolveGlob(cacheDir, './*.+(bundle|chunk|hot-update).*');
     try {
+      // Plant dummy
+      fs.closeSync(fs.openSync(cacheRoot + '/dummy', 'w'));
+
       for (let file of garbage) {
-        fs.unlinkSync(file);
+        await promisify(fs.unlink)(file);
       }
       // Copy assets
       for (let asset of assets) {
         const destination = resolvePath(cacheDir, basename(asset));
-        fs.writeFileSync(destination, fs.readFileSync(asset));
+        await promisify(fs.copyFile)(asset, destination);
       }
       logger.log(`copied ${assets.length} files to '${cacheDir}'`);
-    }
-    catch (err) {
+    } catch (err) {
       logger.error(`failed copying to '${cacheDir}'`);
       logger.error(err);
     }

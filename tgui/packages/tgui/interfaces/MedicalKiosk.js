@@ -119,7 +119,7 @@ const MedicalKioskInstructions = (props, context) => {
     <Section minHeight="100%">
       <Box italic>
         Greetings Valued Employee! Please select a desired automatic
-        health check procedure. Diagnosis costs <b>{kiosk_cost} credits.</b>
+        health check procedure. Diagnosis costs <b>{kiosk_cost} ahn.</b>
       </Box>
       <Box mt={1}>
         <Box inline color="label" mr={1}>
@@ -148,6 +148,7 @@ const MedicalKioskScanResults1 = (props, context) => {
     burn_health,
     suffocation_health,
     toxin_health,
+    sanity_health,
   } = data;
   return (
     <Section title="Patient Health">
@@ -190,6 +191,14 @@ const MedicalKioskScanResults1 = (props, context) => {
             value={toxin_health / 100}
             color="bad">
             <AnimatedNumber value={toxin_health} />
+          </ProgressBar>
+        </LabeledList.Item>
+        <LabeledList.Item
+          label="Sanity Damage">
+          <ProgressBar
+            value={sanity_health / 100}
+            color="bad">
+            <AnimatedNumber value={sanity_health} />
           </ProgressBar>
         </LabeledList.Item>
       </LabeledList>

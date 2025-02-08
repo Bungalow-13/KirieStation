@@ -319,17 +319,14 @@ em {
 }
 
 .binarysay {
-  color: #20c20e;
-  background-color: #000000;
-  display: block;
+  color: #1e90ff;
 }
 
 .binarysay a {
   color: #00ff00;
 }
 
-.binarysay a:active,
-.binarysay a:visited {
+.binarysay a:active, .binarysay a:visited {
   color: #88ff88;
 }
 
@@ -337,32 +334,36 @@ em {
   color: #1ecc43;
 }
 
-.sciradio {
-  color: #c68cfa;
-}
-
-.comradio {
-  color: #9e9cb2;
-}
-
-.secradio {
-  color: #dd3535;
-}
-
-.medradio {
-  color: #57b8f0;
-}
-
-.engradio {
-  color: #f37746;
-}
-
-.suppradio {
+.controlradio {
   color: #b88646;
 }
 
-.servradio {
-  color: #6ca729;
+.inforadio {
+  color: #c68cfa;
+}
+
+.safradio {
+  color: #5bf556;
+}
+
+.trainradio {
+  color: #f37746;
+}
+
+.comradio {
+  color: #fcdf03;
+}
+
+.discradio {
+  color: #dd3535;
+}
+
+.welfradio {
+  color: #57b8f0;
+}
+
+.archradio {
+  color: #bfbfbf;
 }
 
 .syndradio {
@@ -373,7 +374,7 @@ em {
   color: #2681a5;
 }
 
-.terragovradio {
+.headradio {
   color: #7589af;
 }
 
@@ -401,6 +402,11 @@ em {
   color: #c51e1e;
   font-weight: bold;
   font-size: 185%;
+}
+
+.bolddanger {
+  color: #c51e1e;
+  font-weight: bold;
 }
 
 .danger {

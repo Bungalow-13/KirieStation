@@ -22,15 +22,16 @@ export const COLORS = {
     cargo: '#f39c12',
     centcom: '#00c100',
     syndicate: '#8c2e2e',
-    terragov: '#27db93',
+    head: '#27db93',
     other: '#c38312',
   },
   // Damage type colors
   damageType: {
-    oxy: '#3498db',
+    oxy: '#2f62fa',
     toxin: '#2ecc71',
     burn: '#e67e22',
     brute: '#e74c3c',
+    sanity: '#00f5cc',
   },
 };
 
@@ -78,39 +79,49 @@ export const RADIO_CHANNELS = [
     color: '#2681a5',
   },
   {
-    name: 'Supply',
+    name: 'Head',
+    freq: 1339,
+    color: '#444e5f',
+  },
+  {
+    name: 'Control',
     freq: 1347,
-    color: '#b88646',
+    color: '#a8732b',
   },
   {
-    name: 'Service',
+    name: 'Information',
     freq: 1349,
-    color: '#6ca729',
+    color: '#993399',
   },
   {
-    name: 'Science',
+    name: 'Safety',
     freq: 1351,
-    color: '#c68cfa',
+    color: '#32bd2d',
+  },
+  {
+    name: 'Training',
+    freq: 1353,
+    color: '#fb5613',
   },
   {
     name: 'Command',
-    freq: 1353,
-    color: '#9e9cb2',
-  },
-  {
-    name: 'Medical',
     freq: 1355,
-    color: '#57b8f0',
+    color: '#948f02',
   },
   {
-    name: 'Engineering',
+    name: 'Welfare',
     freq: 1357,
-    color: '#f37746',
+    color: '#337296',
   },
   {
-    name: 'Security',
+    name: 'Discipline',
     freq: 1359,
-    color: '#dd3535',
+    color: '#a30000',
+  },
+  {
+    name: 'Architecture',
+    freq: 1359,
+    color: '#919191',
   },
   {
     name: 'AI Private',
